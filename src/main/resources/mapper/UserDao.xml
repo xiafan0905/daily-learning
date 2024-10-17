@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dailylearning.web.dao.UserDao">
+
+    <cache/>
+
+    <update id="update" parameterType="com.example.dailylearning.web.User">
+        update
+            sys_user
+        <set>
+            username = #{name},
+        </set>
+        where
+        id = #{id,jdbcType=VARCHAR}
+    </update>
+
+    <select id="selectUser" parameterType="string" resultType="com.example.dailylearning.web.User">
+        select username, age, '${name}' from sys_user where username = '${name}'
+    </select>
+
+    <select id="selectName" resultType="string">
+        select username, age from sys_user where username = 'root'
+    </select>
+</mapper>

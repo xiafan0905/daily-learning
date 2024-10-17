@@ -1,0 +1,21 @@
+#开发环境
+server:
+    port: 8081
+
+spring:
+    datasource:
+        #数据库连接
+        url: jdbc:mysql://localhost:3306/daydaystudy?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false
+        #数据库用户名
+        username: root
+        #数据库密码
+        password: beyourSelf95.
+        #数据库驱动类名称
+        driverClassName: com.mysql.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis:
+    mapper-locations: classpath:/mapper/*Dao.xml
+    type-aliases-package: com.example.dailylearning.web
+    configuration:
+        cache-enabled: true
